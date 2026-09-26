@@ -2,7 +2,7 @@
 set -u
 cd "$(dirname "$0")/.."
 if ! command -v mvn &> /dev/null; then
-    exec java -cp target/tradesim.jar com.tradesim.TestRunner
+    exec java -XX:+UseSerialGC -Xms16m -Xmx64m -XX:TieredStopAtLevel=1 -XX:CICompilerCount=1 -Xss256k -cp target/tradesim.jar com.tradesim.TestRunner
 fi
 mkdir -p target/surefire-reports
 mvn -q test 1>&2

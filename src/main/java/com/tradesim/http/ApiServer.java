@@ -17,7 +17,7 @@ public final class ApiServer {
         server.createContext("/api/state",x->handle(x,"GET"));
         server.createContext("/api/backtest",x->handle(x,"POST"));
         server.createContext("/api/reset",x->handle(x,"POST"));
-        server.createContext("/",this::staticFile); executor=java.util.concurrent.Executors.newCachedThreadPool(); server.setExecutor(executor); server.start();
+        server.createContext("/",this::staticFile); executor=java.util.concurrent.Executors.newFixedThreadPool(2); server.setExecutor(executor); server.start();
     }
     public void stop(){if(server!=null)server.stop(0);if(executor!=null)executor.shutdownNow();}
     private void handle(HttpExchange x,String method)throws IOException{

@@ -4,7 +4,7 @@
   <dependencies><dependency><groupId>org.junit.jupiter</groupId><artifactId>junit-jupiter</artifactId><version>${junit.version}</version><scope>test</scope></dependency></dependencies>
   <build><finalName>tradesim</finalName><plugins>
     <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version><configuration><release>17</release></configuration></plugin>
-    <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.2.5</version><configuration><useFile>true</useFile></configuration></plugin>
+    <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.2.5</version><configuration><useFile>true</useFile><argLine>-Xms16m -Xmx64m -XX:+UseSerialGC -XX:TieredStopAtLevel=1 -XX:CICompilerCount=1</argLine></configuration></plugin>
     <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-jar-plugin</artifactId><version>3.4.1</version><configuration><archive><manifest><mainClass>com.tradesim.Main</mainClass></manifest></archive></configuration></plugin>
   </plugins></build>
 </project>

@@ -11,4 +11,4 @@ if not exist "target\tradesim.jar" (
 )
 
 echo [TradeSim] Starting TradeSim server on http://localhost:3000 ...
-java -jar target\tradesim.jar
+java -XX:+UseSerialGC -Xms16m -Xmx64m -XX:TieredStopAtLevel=1 -XX:CICompilerCount=1 -Xss256k -jar target\tradesim.jar

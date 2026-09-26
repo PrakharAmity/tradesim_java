@@ -18,4 +18,4 @@ if (!(Test-Path "target\tradesim.jar")) {
 }
 
 Write-Host "[TradeSim] Starting TradeSim server on http://localhost:3000 ..." -ForegroundColor Green
-java -jar target\tradesim.jar
+java -XX:+UseSerialGC -Xms16m -Xmx64m -XX:TieredStopAtLevel=1 -XX:CICompilerCount=1 -Xss256k -jar target\tradesim.jar
