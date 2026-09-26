@@ -1,6 +1,6 @@
 {
   "runtime_config": {
-    "install_command": "mvn clean package -DskipTests",
+    "install_command": "mvn package -DskipTests -B",
     "start_command": "./start.sh",
     "test_command": "./tests/run_tests.sh",
     "ports": [
