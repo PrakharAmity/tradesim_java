@@ -55,3 +55,5 @@ After resolving all issues:
 5. `CooldownStrategy` maintains a strict 1-day rest period after every sale with zero cooldown violations.
 6. Bear markets (STEEL) generate zero transactions and $0.00 total profit.
 7. Running `bash tests/run_tests.sh` passes all 6 tests with `"Passed": 6`, `"Failed": 0`, and exits with code `0`.
+
+
